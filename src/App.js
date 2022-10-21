@@ -15,6 +15,7 @@ function App() {
         || (filter===2 && x.completed)
         );
 
+  const left = tasks.filter(x=>!x.completed).length;
 
   return (
         <div className='container'>
@@ -30,7 +31,7 @@ function App() {
 
         <div className='footer'>
           <button >+</button>
-          <span>items left</span>
+          <span> {left} items left</span>
           <Button texto="All" setFilter={setFilter} />
           <Button texto="Active" setFilter={setFilter} />
           <Button texto="Completed" setFilter={setFilter} />
